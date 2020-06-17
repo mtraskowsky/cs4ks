@@ -12,6 +12,7 @@ title.id = "mypagetitle";
 title.className = "mypage";
 document.body.insertBefore(title, mainpage);
 
+// TESTING CHANGES
 
 function showMoreInfo(ID){
   var ex = document.getElementById(`extraInfo-${i}`);
