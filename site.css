@@ -1,0 +1,105 @@
+/** site.js 
+ * You should add your CSS code to this file.  
+ * See the assignment description in Guide for what
+ * your code needs to accomplish.
+ */
+
+body {
+  background-color: #DCD0C0;
+  color: #373737;
+  border-style: solid
+  border-width: 5px;
+  font-family: "Segoe UI",Arial,sans-serif;
+}
+
+.mainpage {
+  border-color: black;
+  border-width:20px;
+}
+  
+.titles {
+  font-family: "Segoe UI",Arial,sans-serif;
+  text-align: center;
+  border-style: solid
+  border-width: 5px;
+}
+
+.container {
+  display: grid;
+  grid-template-columns: 0.5fr 1fr 0.3fr 1fr ;
+  background-color: #F4F4F4;
+  grid-gap: 1rem;
+  justify-items: center;
+}
+
+.subdiv {
+  display:grid;
+  grid-template-rows: 1fr 1fr;
+  background-color: #F4F4F4;
+  grid-gap:2px;
+}
+
+.mypage {
+  font-size: 40px;
+  text-align: center;
+}
+
+#moreButton {
+  display: none;
+}
+
+
+.extraInfo {
+  display: none;
+}
+
+@media (max-width:700px) {
+  .container {
+    grid-template-columns: 0.5fr 1fr;
+    grid-template-rows: auto .5fr;
+    grid-template-areas: 
+      "iden statment"
+      "more more";
+  }
+  
+  .extraInfo {
+    display: none;
+  }
+  .extraInfo.active {
+    display: grid;
+  }
+  
+  #det1 {
+    grid-area: iden;
+  }
+  
+  #det2 {
+    grid-area: statment;
+  }
+  
+  #moreButton {
+    display: block;
+    grid-area: more;
+    width:100%;
+    cursor: pointer;
+  }
+  
+  .det3, .det4, .det5 {
+    display: none;
+  }
+
+  #idColTitle, #standardColTitle, #subconceptColTitle, #practicesColTitle {
+    display: none;
+  }
+  
+  .mypage {
+    font-size: 20px;
+    text-align: center;
+  }
+  
+  .mobileExtDetTit {
+    text-align: center;
+  }
+}
+
+
