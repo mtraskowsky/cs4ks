@@ -32,7 +32,7 @@ body {
   justify-items: center;
 }
 
-.subdiv {
+.column2 {
   display:grid;
   grid-template-rows: 1fr 1fr;
   background-color: #F4F4F4;
@@ -44,12 +44,13 @@ body {
   text-align: center;
 }
 
-#moreButton {
+/*
+#open-dialog {
   display: none;
 }
+*/
 
-
-.extraInfo {
+.dialog, .open-the-dialog-button {
   display: none;
 }
 
@@ -62,10 +63,11 @@ body {
       "more more";
   }
   
-  .extraInfo {
-    display: none;
-  }
-  .extraInfo.active {
+  .open-the-dialog-button {
+    display: block;
+  }  
+  
+  .dialog.active {
     display: grid;
   }
   
@@ -77,29 +79,34 @@ body {
     grid-area: statment;
   }
   
-  #moreButton {
+  /*
+  #open-dialog {
     display: block;
     grid-area: more;
     width:100%;
     cursor: pointer;
   }
-  
-  .det3, .det4, .det5 {
+  */
+  #det3, #det4, #det5 {
     display: none;
   }
 
+  /*
   #idColTitle, #standardColTitle, #subconceptColTitle, #practicesColTitle {
     display: none;
   }
+  */
   
   .mypage {
     font-size: 20px;
     text-align: center;
   }
   
+  /*
   .mobileExtDetTit {
     text-align: center;
   }
+  */
 }
 
 
