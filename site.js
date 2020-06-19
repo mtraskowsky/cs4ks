@@ -12,14 +12,9 @@ title.id = "mypagetitle";
 title.className = "mypage";
 document.body.insertBefore(title, mainpage);
 
-// TESTING CHANGES
 
-function showMoreInfo(ID){
-  var ex = document.getElementById(`extraInfo-${i}`);
-  ex.classList.add('active');
-}
 
-// function to populate page with the data from standards.js
+// function to populate page with the data from standards.json
 function displayDetails(stds, i) {
   return `
   <div class=container>
@@ -32,14 +27,14 @@ function displayDetails(stds, i) {
       <p class="practices open-dialog" id="det5">${stds.practices}</p>
   </div>
   
-    <div class="open-the-dialog-button" id="open-dialog" data-dialog-id="dialog-${i}">Learn more here!</div>
-    <div id="dialog-${i}" class="dialog dialog-${i}" data-dialog-id="dialog-${i}">
+    <div class="open-the-dialog-button" id="open-dialog" data-info-id="dialog-${i}">Click for more details</div>
+    <div id="dialog-${i}" class="dialog dialog-${i}" data-info-id="dialog-${i}">
       <h3 class="mobileExtDetTit">Subconcept</h3>
-      <p>${stds.subconcept}</p>
+      <p class="expandedDets">${stds.subconcept}</p>
       <h3 class="mobileExtDetTit">Description</h3>
-      <p>${stds.description}</p>
+      <p class="expandedDets">${stds.description}</p>
       <h3 class="mobileExtDetTit">Practices</h3>
-      <p>${stds.practices}</p>
+      <p class="expandedDets">${stds.practices}</p>
     </div>
    `
   ;
@@ -56,11 +51,34 @@ document.getElementById("mainpage").innerHTML =
       <h2 class="titles" id="practicesColTitle">Practices</h2>
   </div>
 `;
-document.getElementById("mainpage").innerHTML += standards.map(displayDetails).join('');
 
+/// NEW FOR PROJ 2
+// function to populate webpage using JSON data from standards.JSON
+function useXHR(){
+  //Make an XHR 
+  const xhr = new XMLHttpRequest();
+  
+  xhr.addEventListener('load', ()=>{
+    var standardsJSON = JSON.parse(xhr.responseText);
+    document.getElementById("mainpage").innerHTML += standardsJSON.map(displayDetails).join('');
+  });
+  
+  const url = "standards.json";
+  xhr.open("GET", url);
+  xhr.send();
+
+}
+
+useXHR();
+
+
+// Function used in Project 1, using the standards.js file
+//document.getElementById("mainpage").innerHTML += standards.map(displayDetails).join('');
+
+// Expanding the more info buttons
 var buttons = document.querySelectorAll(".open-the-dialog-button");
 buttons.forEach(function (button) {
-    var id = button.dataset.dialogId;
+    var id = button.dataset.infoId;
     var extraInfo = document.querySelectorAll(`.${id}`);
     extraInfo.forEach(function(dialog){
       button.addEventListener('click', function() {
@@ -68,4 +86,6 @@ buttons.forEach(function (button) {
       });
     });
 });
+
+
 

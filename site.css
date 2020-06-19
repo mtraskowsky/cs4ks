@@ -20,8 +20,8 @@ body {
 .titles {
   font-family: "Segoe UI",Arial,sans-serif;
   text-align: center;
-  border-style: solid
-  border-width: 5px;
+  border-bottom: solid 2px #747474;
+      padding: .3rem;
 }
 
 .container {
@@ -39,9 +39,17 @@ body {
   grid-gap:2px;
 }
 
+
+
+#det2, #det3 {
+  border-left: solid 1px #747474;
+  padding: 20px;
+}
+
 .mypage {
   font-size: 40px;
   text-align: center;
+  padding: 1rem
 }
 
 /*
@@ -73,40 +81,59 @@ body {
   
   #det1 {
     grid-area: iden;
+    
   }
   
   #det2 {
     grid-area: statment;
+    border-left: solid 1px #747474;
+    padding: 20px;
   }
   
-  /*
+  
   #open-dialog {
-    display: block;
     grid-area: more;
+    background-color: #373737;
+    color: white;
     width:100%;
     cursor: pointer;
+    text-align: center;
+    padding: 0.5rem;
   }
-  */
+  
   #det3, #det4, #det5 {
     display: none;
   }
 
-  /*
-  #idColTitle, #standardColTitle, #subconceptColTitle, #practicesColTitle {
+  #idColTitle, #standardColTitle {
+    font-size: 20px;
+    border-bottom: solid 2px #747474;
+    padding: .3rem;
+  }
+  
+  #subconceptColTitle, #practicesColTitle {
     display: none;
   }
-  */
+  
   
   .mypage {
     font-size: 20px;
     text-align: center;
+    padding: 1rem;
+    border-top: solid 5px #747474;
+    border-bottom: solid 5px #747474;
   }
   
-  /*
+  
   .mobileExtDetTit {
     text-align: center;
+    border-bottom: solid 1px #747474;
+    padding: 20px;
   }
-  */
+  
+  .expandedDets{
+    text-align: center;
+  }
 }
 
 
