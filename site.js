@@ -55,18 +55,31 @@ document.getElementById("mainpage").innerHTML =
 /// NEW FOR PROJ 2
 // function to populate webpage using JSON data from standards.JSON
 function useXHR(){
-  //Make an XHR 
+  
   const xhr = new XMLHttpRequest();
   
   xhr.addEventListener('load', ()=>{
     var standardsJSON = JSON.parse(xhr.responseText);
     document.getElementById("mainpage").innerHTML += standardsJSON.map(displayDetails).join('');
+    
+      // Expanding the more info buttons
+      var buttons = document.querySelectorAll(".open-the-dialog-button");
+      buttons.forEach(function (button) {
+      var id = button.dataset.infoId;
+      var extraInfo = document.querySelectorAll(`.${id}`);
+      extraInfo.forEach(function(dialog){
+        button.addEventListener('click', function() {
+          dialog.classList.add('active');
+        });
+      });
+    });
   });
   
   const url = "standards.json";
   xhr.open("GET", url);
   xhr.send();
 
+  
 }
 
 useXHR();
@@ -75,17 +88,6 @@ useXHR();
 // Function used in Project 1, using the standards.js file
 //document.getElementById("mainpage").innerHTML += standards.map(displayDetails).join('');
 
-// Expanding the more info buttons
-var buttons = document.querySelectorAll(".open-the-dialog-button");
-buttons.forEach(function (button) {
-    var id = button.dataset.infoId;
-    var extraInfo = document.querySelectorAll(`.${id}`);
-    extraInfo.forEach(function(dialog){
-      button.addEventListener('click', function() {
-        dialog.classList.add('active');
-      });
-    });
-});
 
 
 
