@@ -82,6 +82,10 @@ body {
     display: block;
   }  
   
+  .dialog {
+    display: none;
+  }
+  
   .dialog.active {
     display: grid;
   }

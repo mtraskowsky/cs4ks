@@ -28,7 +28,7 @@ function displayDetails(stds, i) {
   </div>
   
     <div class="open-the-dialog-button" id="open-dialog" data-info-id="dialog-${i}">Click for more details</div>
-    <div id="dialog-${i}" class="dialog dialog-${i}" data-info-id="dialog-${i}">
+    <div id="dialog-${i}" class="dialog-${i} dialog" data-info-id="dialog-${i}">
       <h3 class="mobileExtDetTit">Subconcept</h3>
       <p class="expandedDets">${stds.subconcept}</p>
       <h3 class="mobileExtDetTit">Description</h3>
@@ -60,6 +60,8 @@ function useXHR(){
   
   xhr.addEventListener('load', ()=>{
     var standardsJSON = JSON.parse(xhr.responseText);
+    
+    // populates mainpage with json data
     document.getElementById("mainpage").innerHTML += standardsJSON.map(displayDetails).join('');
     
       // Expanding the more info buttons
@@ -69,7 +71,7 @@ function useXHR(){
       var extraInfo = document.querySelectorAll(`.${id}`);
       extraInfo.forEach(function(dialog){
         button.addEventListener('click', function() {
-          dialog.classList.add('active');
+          dialog.classList.toggle('active');
         });
       });
     });
