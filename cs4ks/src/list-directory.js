@@ -2,8 +2,6 @@ const fs = require('fs');
 const path = require('path');
 const serveFile = require('./serve-file');
 
-// TEST LINE
-
 /** @module listDirectory
  * Provides a function for serving a directory listing
  * for the directory matching the pathname in the req.url 
