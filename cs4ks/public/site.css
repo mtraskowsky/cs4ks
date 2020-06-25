@@ -1,0 +1,152 @@
+/** site.js 
+ * You should add your CSS code to this file.  
+ * See the assignment description in Guide for what
+ * your code needs to accomplish.
+ */
+
+body {
+  background-color: #DCD0C0;
+  color: #373737;
+  border-style: solid
+  border-width: 5px;
+  font-family: "Segoe UI",Arial,sans-serif;
+    font-size: 15px;
+}
+
+
+.mainpage {
+  border-color: black;
+  border-width:20px;
+}
+  
+.titles {
+  font-family: "Segoe UI",Arial,sans-serif;
+  text-align: center;
+  border-bottom: solid 2px #747474;
+      padding: .3rem;
+}
+
+.container {
+  display: grid;
+  grid-template-columns: 0.5fr 1fr 0.3fr 1fr ;
+  background-color: #F4F4F4;
+  grid-gap: 1rem;
+  justify-items: center;
+}
+
+.column2 {
+  display:grid;
+  grid-template-rows: 1fr 1fr;
+  background-color: #F4F4F4;
+  grid-gap:2px;
+}
+
+
+
+#det2, #det3 {
+  border-left: solid 1px #747474;
+  padding: 20px;
+}
+
+#det4 {
+  text-align: center;
+  margin: 1rem;
+}
+
+.mypage {
+  font-size: 40px;
+  text-align: center;
+  padding: 1.5rem;
+  border-top: solid 5px #747474;
+  border-bottom: solid 5px #747474;
+}
+
+/*
+#open-dialog {
+  display: none;
+}
+*/
+
+.dialog, .open-the-dialog-button {
+  display: none;
+}
+
+@media (max-width:700px) {
+  .container {
+    grid-template-columns: 0.5fr 1fr;
+    grid-template-rows: auto .5fr;
+    grid-template-areas: 
+      "iden statment"
+      "more more";
+  }
+  
+  .open-the-dialog-button {
+    display: block;
+  }  
+  
+  .dialog {
+    display: none;
+  }
+  
+  .dialog.active {
+    display: grid;
+  }
+  
+  #det1 {
+    grid-area: iden;
+    
+  }
+  
+  #det2 {
+    grid-area: statment;
+    border-left: solid 1px #747474;
+    padding: 20px;
+  }
+  
+  
+  #open-dialog {
+    grid-area: more;
+    background-color: #373737;
+    color: white;
+    width:100%;
+    cursor: pointer;
+    text-align: center;
+    padding: 0.5rem;
+  }
+  
+  #det3, #det4, #det5 {
+    display: none;
+  }
+
+  #idColTitle, #standardColTitle {
+    font-size: 20px;
+    border-bottom: solid 2px #747474;
+    padding: .3rem;
+  }
+  
+  #subconceptColTitle, #practicesColTitle {
+    display: none;
+  }
+  
+  
+  .mypage {
+    font-size: 20px;
+    text-align: center;
+    padding: 1rem;
+    border-top: solid 5px #747474;
+    border-bottom: solid 5px #747474;
+  }
+  
+  
+  .mobileExtDetTit {
+    text-align: center;
+    border-bottom: solid 1px #747474;
+    padding: 20px;
+  }
+  
+  .expandedDets{
+    text-align: center;
+  }
+}
+
+
