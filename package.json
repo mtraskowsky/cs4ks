@@ -7,6 +7,17 @@
     "test": "jest test",
     "start": "node server.js"
   },
-  "author": "",
-  "license": "UNLICENSED"
+  "author": "mariatraskowsky",
+  "license": "UNLICENSED",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mtraskowsky/cs4ks.git"
+  },
+  "bugs": {
+    "url": "https://github.com/mtraskowsky/cs4ks/issues"
+  },
+  "homepage": "https://github.com/mtraskowsky/cs4ks#readme",
+  "dependencies": {
+    "better-sqlite3": "^7.1.0"
+  }
 }

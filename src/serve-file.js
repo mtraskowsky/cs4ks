@@ -1,6 +1,7 @@
 const fs = require('fs');
 const path = require('path');
 const pathToMimeType = require('./path-to-mime-type');
+const db = require('./databaseSingleton');
 
 /** @module serveFile 
  * Provides a function for serving files in the public 
