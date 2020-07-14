@@ -25,5 +25,4 @@ function pathToMimeType(filePath) {
   }
 }
 
-
 module.exports = pathToMimeType;

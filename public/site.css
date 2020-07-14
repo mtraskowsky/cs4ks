@@ -1,3 +1,41 @@
+/* index.html */
+
+.indexPage {
+  color: #595959;
+  background: #fff;
+  text-align: center;
+}
+
+.theTitle {
+  color: #121011;
+  font-size: 2rem; 
+  font-family: sans-serif;
+    padding:30px;
+
+}
+
+.descrip {
+  font-family: 'Roboto Mono',monospace;
+  color: #595959;
+  font-size: 1.5rem;
+  padding: 50px;
+  border-top: solid 5px black;
+}
+
+.stdLink {
+  color: #121011;
+  font-family: 'Museo Sans',Helvetica,Arial,sans-serif;
+  padding:50px;
+  border-top: solid 2px black;
+}
+
+.cstaLink {
+  color: #007aff;
+  font-family: 'Museo Sans',Helvetica,Arial,sans-serif;
+  padding:50px;
+  border-top: solid 2px black;
+}
+
 /** site.js 
  * You should add your CSS code to this file.  
  * See the assignment description in Guide for what
@@ -10,7 +48,7 @@ body {
   border-style: solid
   border-width: 5px;
   font-family: "Segoe UI",Arial,sans-serif;
-    font-size: 15px;
+  font-size: 15px;
 }
 
 
@@ -148,5 +186,4 @@ body {
     text-align: center;
   }
 }
-
 
