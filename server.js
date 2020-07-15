@@ -1,5 +1,7 @@
 const handleRequest = require('./src/handle-request');
 const http = require('http');
+require('./src/database');
+require('./src/templates');
 
 const port = 3000;
 

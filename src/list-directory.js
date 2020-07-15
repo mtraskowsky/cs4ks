@@ -24,10 +24,8 @@ function listDirectory(req, res) {
     // TODO: serve the index file instead of the directory listing
     req.url = path.join(req.url, "index.html");
     serveFile(req, res);
-      
-   // does this return statement go here?
     return;
-      
+   
     }
     
     var pathHeader = `<h2>Directory Listing for ${pathname}</h2>`;
@@ -53,6 +51,7 @@ function listDirectory(req, res) {
   </body>
 </html>
 `;
+
     
     res.writeHeader(200, {
       "Content-Type": "text/html",

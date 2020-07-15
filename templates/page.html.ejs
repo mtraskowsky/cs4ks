@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Kansas Computer Science Standards</title>
+        <link href="site.css" rel="stylesheet">
+    </head>
+    <body> 
+      <div id="mypagetitle" class="mypage">
+        Kansas Computer Science Standards
+      </div>
+      <p id="mainpage">  
+      <div class="container">
+          <h2 class="titles" id="idColTitle">Identifier</h2>
+          <h2 class="titles" id="standardColTitle">Standard</h2>
+          <h2 class="titles" id="subconceptColTitle">Subconcept</h2>
+          <h2 class="titles" id="practicesColTitle">Practices</h2>
+          <h2 class="titles" id="conceptColTitle">Concepts</h2>
+      </div>
+      <% var i = 0; %>
+      <% standards.forEach((std) =>{ %>
+        <div class="container">       
+            <p class="identifier column1 open-dialog" id="det1"><%= std.identifier %></p>
+          <div class="column2 open-dialog">
+            <p class="statement open-dialog" id="det2"><%= std.description %></p>
+            <p class="description open-dialog" id="det3"><%= std.summary %></p>
+          </div>
+          <p class="subconcept open-dialog" id="det4"><%= std.subconcept %></p>
+          <p class="practices open-dialog" id="det5"><%= std.practices %></p>
+          <p class="concept open-dialog" id="det6"><%= std.concept %></p>      
+        </div>
+      <div class="open-the-dialog-button" id="open-dialog" data-info-id="dialog-<%= i %>">Click for more details</div>
+      <div id="dialog-<%= i %>" class="dialog-<%= i %> dialog" data-info-id="dialog-<%= i %>">
+        <h3 class="mobileExtDetTit">Subconcept</h3>
+        <p class="expandedDets"><%= std.subconcept %></p>
+        <h3 class="mobileExtDetTit">Description</h3>
+        <p class="expandedDets"><%= std.summary %></p>
+        <h3 class="mobileExtDetTit">Practices</h3>
+        <p class="expandedDets"><%= std.practices %></p>
+        <h3 class="mobileExtDetTit">Concept</h3>
+        <p class="expandedDets"><%= std.concept %></p>
+      </div>
+      <% i++; %>
+      <% }) %>
+      <script src="site.js"></script>
+      </p>
+    </body>
+</html>

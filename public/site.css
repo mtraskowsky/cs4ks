@@ -66,7 +66,7 @@ body {
 
 .container {
   display: grid;
-  grid-template-columns: 0.5fr 1fr 0.3fr 1fr ;
+  grid-template-columns: 0.5fr 1fr 0.3fr 1fr 0.5fr;
   background-color: #F4F4F4;
   grid-gap: 1rem;
   justify-items: center;
@@ -152,7 +152,7 @@ body {
     padding: 0.5rem;
   }
   
-  #det3, #det4, #det5 {
+  #det3, #det4, #det5, #det6 {
     display: none;
   }
 
@@ -162,7 +162,7 @@ body {
     padding: .3rem;
   }
   
-  #subconceptColTitle, #practicesColTitle {
+  #subconceptColTitle, #practicesColTitle, #conceptColTitle {
     display: none;
   }
   
