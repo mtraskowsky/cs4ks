@@ -1,0 +1,14 @@
+<h2>New Forum Topic Post</h2>
+<form method="POST" action="/forum/topics/:id/posts">
+  
+  <div>
+    <label>Topic(Subject)</label>
+    <input type="text" name="subject" required/>
+  </div>
+  
+  <div>
+    <textarea  width="stretch" rows="10" name="body" required></textarea>
+  </div>
+    
+  <input type="submit" value="Post"/>
+</form>

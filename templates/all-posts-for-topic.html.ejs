@@ -1,0 +1,63 @@
+<!doctype HTML>
+<html>
+  <head>
+    <title>Forums: <%= title %></title>
+    <link type="text/css" rel="stylesheet" href="/site.css">
+  </head>
+  <header>
+  <% if(locals.user) { %>
+    Welcome <%= user.username %>!
+    <a href="/signout">Sign Out</a>
+  <% } else { %>
+    <a href="/signin">Sign In</a> 
+    or
+    <a href="/signup">Sign Up</a>
+  <% } %>
+  <a href="/" class="homepageButton">HOME</a>
+</header>
+  <body>
+    <div class="forumPosts">
+      <h2 class="TitleOfForumCreationPage"><%= title.subject%> Forum Posts</h2>
+      <div class="listOfPosts">
+      <% posts.forEach(function(post){ %>
+          <div class="eachPost">
+            <div class="postBody">
+              <p><%= post.body %></p>
+            </div>
+            <div class="authorAndDate">
+              <div>
+              <p>Author: <%= post.author %></p>
+            </div>
+            <div>
+              <p>Date posted: <%= post.date %></p>
+            </div>
+            </div>          
+          </div>
+      <% }); %>
+          
+     <% if(locals.user) { %>
+     <% if(locals.user.role === "Author") { %>
+      </div>
+      <div class="createNewTopic">
+        <h2>Create New Post</h2>
+        <form method="POST" action="/forum/topics/<%=id%>/posts">
+
+          <div>
+            <label name="subject">Topic: <%= title.subject%></label>
+          </div>
+          <div>
+            <label>Body</label>
+            <textarea rows="10" name="body" required></textarea>  
+          </div>
+         
+          <input type="submit" value="Post"/>
+
+        </form>
+      </div>     
+     <% } %>
+     <% } else {%>
+        <h2>To create a new post, please sign in or sign up.</h2>
+     <% } %>
+    </div>
+  </body>
+</html>

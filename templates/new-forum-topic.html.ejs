@@ -1,0 +1,28 @@
+<!doctype HTML>
+<html>
+  <head>
+    <title>Forums: <%= title %></title>
+    <link type="text/css" rel="stylesheet" href="/site.css">
+  </head>
+  <header>
+  <% if(locals.user) { %>
+    
+    Welcome <%= user.username %>!
+    <a href="/signout">Sign Out</a>
+    <a href="/" class="homepageButton">HOME</a>
+    <h2>New Forum Topic</h2>
+            <form method="POST" action="/forum/topics">
+
+              <label>Forum Subject</label>
+              <input type="text" name="subject" required/>
+
+              <input type="submit" value="Post"/>
+            </form>
+  <% } else { %>
+    <a href="/signin">Sign In</a> 
+    or
+    <a href="/signup">Sign Up</a>
+          <h2>Must be signed in to post.</h2>
+  <% } %>
+</header>
+</html>

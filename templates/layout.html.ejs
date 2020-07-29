@@ -1,0 +1,26 @@
+<!doctype HTML>
+<html>
+  <head>
+    <title>Forums: <%= title %></title>
+    <link type="text/css" rel="stylesheet" href="/site.css">
+  </head>
+  <header>
+  <% if(locals.user) { %>
+    Welcome <%= user.username %>!
+    <a href="/signout">Sign Out</a>
+  <% } else { %>
+    <a href="/signin">Sign In</a> 
+    /
+    <a href="/signup">Sign Up</a>
+  <% } %>
+    <a href="/" class="homepageButton">HOME</a>
+</header>
+  <body>
+    <div class="content">      
+      <%- post %>  
+      <%- list %>
+    </div>
+    <script src="/blog.js"></script>
+  </body>
+</html>
+

@@ -1,0 +1,26 @@
+<div class="listOfTopics">
+  <h2>Topics</h2>
+  <div class="createPostButton">
+    <a href="/forum/topics/new" >Click here to create a new topic</a>  
+  </div>
+    <% var i = topicNum; %>
+    <% topics.forEach(function(topic){ %>
+    <div class="eachTopic">
+      <a href="/forum/topics/<%=i%>">
+        <div class="topicSubject">
+          <p>Topic: <%= topic.subject %></p>
+        </div>
+        <div>
+          <p>Creator: <%= topic.creator %></p>
+        </div>
+        <div>
+          <p>Date: <%= topic.date %></p>
+        </div>
+        <div>
+          <p>Number of Posts: <%= topic.postCount %></p>
+        </div>
+      </a>
+      <% i--; %>
+    </div>
+  <% }); %>
+</nav>

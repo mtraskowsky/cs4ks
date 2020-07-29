@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <Title>Intro to CS4KS</Title>
+    <link href="site.css" rel="stylesheet">
+  </head>
+  <header>
+  <% if(locals.user) { %>
+    Welcome <%= user.username %>!
+    <a href="/signout">Sign Out</a>
+  <% } else { %>
+      <a href="/signin">Sign In</a> 
+      /
+      <a href="/signup">Sign Up</a>
+  <% } %>
+    <a href="/forum" class="viewForumHeaderButton">View forums here</a>
+    <a href="/" class="homepageButton">HOME</a>
+</header>
+  <body class="indexPage">
+    <h1 class="theTitle">Kansas Computer Science Teacher&#8217s Association</p>
+    <p class="descrip">
+      This is the website of the Kansas Computer Science Teacher&#8217s Association (CSTA) chapter. If you are interested in becoming a member of the Kansas CSTA or part of its leadership, please let us know! In addition to organization, we we are working on an implementation guide for the new state model standards for computer science. We are also working on the first Computer Science for Kansas conference that will be the flagship for supporting CS in Kansas.
+    </p>
+    <div class="stdLink">
+      <a href="standards.html">Read about the standards here!</a>
+    </div>
+    <div class="cstaLink">
+      <a href="https://www.csteachers.org/">Visit the National CSTA website for more info!</a>
+    </div>
+  </body>
+</html>
