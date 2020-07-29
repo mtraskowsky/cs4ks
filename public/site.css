@@ -185,5 +185,93 @@ body {
   .expandedDets{
     text-align: center;
   }
+  
+  /* forum css in mobile view */
+  header {
+    font-size: 50px;
+  }
+
+  header a, header a:hover {
+    font-size: 50px;
+  }
 }
 
+/* forum css */
+header {
+  text-align: center;
+  color: white;
+  background: #747474;
+  font-size: 2rem;
+}
+
+header a, header a:hover {
+  color: whitesmoke;
+  font-size: 2rem;
+}
+
+.viewForumHeaderButton, .homepageButton {
+  margin-left: 6rem;
+}
+
+.forumPosts {
+  text-align: center;
+  font-size: 20px;
+}
+
+.listOfPosts {
+  margin: 50px;
+}
+
+.eachPost {
+  border: solid 3px #747474;
+  margin: 2rem;
+}
+
+.signInDisplay, .entireSignInDiv {
+  text-align:center;
+  font-size: 3rem;
+}
+
+.emailBox, .passBox, .submitBox {
+  border-bottom: solid 2px #747474;
+  height: 100px;
+}
+
+.signUpPage{
+    text-align:center;
+    font-size: 3rem;
+}
+
+.listOfTopics {
+  text-align:center;
+  font-size: 2rem;
+}
+
+.eachTopic {
+  font-family: 'Roboto Mono',monospace;
+  color: #595959;
+  font-size: 1rem;
+  padding: 50px;
+  border: solid 3px black;
+}
+
+.createPostButton {
+  font-family: 'Roboto Mono',monospace;
+  color: black;
+  font-size: 2.5rem;
+  padding: 50px;
+  border-bottom: solid 5px black;
+}
+
+.topicSubject{
+  font-size: 2rem;
+}
+
+.postBody {
+  font-size: 2rem;
+  border-bottom: solid 1px black;
+}
+
+.authorAndDate {
+    font-size: 1rem;
+}

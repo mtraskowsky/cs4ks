@@ -5,6 +5,18 @@
         <title>Kansas Computer Science Standards</title>
         <link href="site.css" rel="stylesheet">
     </head>
+    <header>
+    <% if(locals.user) { %>
+      Welcome <%= user.username %>!
+      <a href="/signout">Sign Out</a>
+    <% } else { %>
+        <a href="/signin">Sign In</a> 
+        /
+        <a href="/signup">Sign Up</a>
+    <% } %>
+      <a href="/forum" class="viewForumHeaderButton">View forums here</a>
+      <a href="/" class="homepageButton">HOME</a>
+  </header>
     <body> 
       <div id="mypagetitle" class="mypage">
         Kansas Computer Science Standards
